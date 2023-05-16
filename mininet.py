@@ -87,14 +87,4 @@ class MyTopo( Topo ):
 		self.addLink( switch_thirtytwo, switch_thirtythree, cls=TCLink,bw=10  )
 		self.addLink( switch_twentysix, rightHost, cls=TCLink,bw=10  )
 
-def start_mininet_with_controller():
-    topo = MyTopo()
-    net = Mininet(topo=topo)
-    controller = net.addController('c0', controller=RemoteController, ip='127.0.0.1', port=6633)
-    net.start()
-    controller.start()
-    net.pingAll()
-    net.stop()
-
-if __name__ == '__main__':
-    start_mininet_with_controller()
+topos = { 'mytopo': ( lambda: MyTopo() ) }
