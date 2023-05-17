@@ -100,6 +100,8 @@ topos = { 'mytopo': ( lambda: MyTopo() ) }
 
 https://blog.sflow.com/2016/05/mininet-dashboard.html
 
+feature:install odl-dlux-core odl-dluxapps-nodes odl-dluxapps-topology odl-dluxapps-yangui odl-dluxapps-yangvisualizer odl-dluxapps-yangman
+feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core
 
 
 sudo mn --custom /home/zaman/mininet/sflow-rt/extras/sflow.py,/home/zaman/mininet/mininet.py --topo mytopo --mac --controller=remote,ip=192.168.229.128,port=6633 --switch ovs,protocols=OpenFlow13
