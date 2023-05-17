@@ -108,5 +108,7 @@ tar -xvzf sflow-rt.tar.gz
 cd sflow-rt
 ./start.sh
 
-
+mn --version
+sudo apt-get install openvswitch-switch
+sudo service openvswitch-switch start
 sudo mn --custom /home/zaman/mininet/sflow-rt/extras/sflow.py,/home/zaman/mininet/mininet.py --topo mytopo --mac --controller=remote,ip=192.168.229.128,port=6633 --switch ovs,protocols=OpenFlow13
