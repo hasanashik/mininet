@@ -1,0 +1,105 @@
+from mininet.topo import Topo
+from mininet.net import Mininet
+from mininet.node import CPULimitedHost
+from mininet.link import TCLink
+from mininet.util import dumpNodeConnections
+from mininet.log import setLogLevel
+from mininet.node import RemoteController
+
+class MyTopo( Topo ):
+	"Simple topology example."
+	def build(self):
+		# Add hosts and switches
+		leftHost = self.addHost( 'h1', ip='20.0.0.1'  )
+		rightHost = self.addHost( 'h2', ip='20.0.0.2'  )
+		switch_one = self.addSwitch( 's1' )
+		switch_two = self.addSwitch( 's2' )
+		switch_three = self.addSwitch( 's3' )
+		switch_four = self.addSwitch( 's4' )
+		switch_five = self.addSwitch( 's5' )
+		switch_six = self.addSwitch( 's6' )
+		switch_seven = self.addSwitch( 's7' )
+		switch_eight = self.addSwitch( 's8' )
+		switch_nine = self.addSwitch( 's9' )
+		switch_ten = self.addSwitch( 's10' )
+		switch_eleven = self.addSwitch( 's11' )
+		switch_twelve = self.addSwitch( 's12' )
+		switch_thirteen = self.addSwitch( 's13' )
+		switch_fourteen = self.addSwitch( 's14' )
+		switch_fifteen = self.addSwitch( 's15' )
+		switch_sixteen = self.addSwitch( 's16' )
+		switch_seventeen = self.addSwitch( 's17' )
+		switch_eighteen = self.addSwitch( 's18' )
+		switch_nineteen = self.addSwitch( 's19' )
+		switch_twenty = self.addSwitch( 's20' )
+		switch_twentyone = self.addSwitch( 's21' )
+		switch_twentytwo = self.addSwitch( 's22' )
+		switch_twentythree = self.addSwitch( 's23' )
+		switch_twentyfour = self.addSwitch( 's24' )
+		switch_twentyfive = self.addSwitch( 's25' )
+		switch_twentysix = self.addSwitch( 's26' )
+		switch_twentyseven = self.addSwitch( 's27' )
+		switch_twentyeight = self.addSwitch( 's28' )
+		switch_twentynine = self.addSwitch( 's29' )
+		switch_thirty = self.addSwitch( 's30' )
+		switch_thirtyone = self.addSwitch( 's31' )
+		switch_thirtytwo = self.addSwitch( 's32' )
+		switch_thirtythree = self.addSwitch( 's33' )
+
+		# Add links
+		self.addLink( leftHost, switch_one)
+  
+		self.addLink( switch_one, switch_two )
+		self.addLink( switch_two, switch_three )
+		self.addLink( switch_two, switch_thirtythree )
+		self.addLink( switch_three, switch_four )
+		self.addLink( switch_four, switch_five )
+		self.addLink( switch_four, switch_nine )
+		self.addLink( switch_five, switch_six )
+		self.addLink( switch_six, switch_seven )
+		self.addLink( switch_seven, switch_eight )
+		self.addLink( switch_nine, switch_ten )
+		self.addLink( switch_ten, switch_eleven )
+		self.addLink( switch_eleven, switch_twelve )
+		self.addLink( switch_twelve, switch_thirteen )
+		self.addLink( switch_twelve, switch_fourteen )
+		self.addLink( switch_fourteen, switch_fifteen )
+		self.addLink( switch_twelve, switch_sixteen )
+		self.addLink( switch_sixteen, switch_seventeen )
+		self.addLink( switch_sixteen, switch_thirty )
+		self.addLink( switch_seventeen, switch_eighteen )
+		self.addLink( switch_eighteen, switch_nineteen )
+		self.addLink( switch_nineteen, switch_twenty )
+		self.addLink( switch_twenty, switch_twentyone )
+		self.addLink( switch_twentyone, switch_twentytwo )
+		self.addLink( switch_twentytwo, switch_twentythree )
+		self.addLink( switch_twentythree, switch_twentyfour )
+		self.addLink( switch_twentythree, switch_twentyfive )
+		self.addLink( switch_twentyfive, switch_twentysix )
+		self.addLink( switch_twentyfive, switch_twentyseven )
+		self.addLink( switch_twentyseven, switch_twentyeight )
+		self.addLink( switch_twentyeight, switch_twentynine )
+		self.addLink( switch_twentynine, switch_thirty )
+		self.addLink( switch_thirty, switch_thirtyone )
+		self.addLink( switch_thirtyone, switch_thirtytwo )
+		self.addLink( switch_thirtytwo, switch_thirtythree )
+  
+		self.addLink( rightHost, switch_twentysix )
+  
+
+
+topos = { 'mytopo': ( lambda: MyTopo() ) }
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo mn --custom /home/zaman/mininet/sflow-rt/extras/sflow.py,/home/zaman/mininet/mininet.py --topo mytopo --mac --controller=remote,ip=192.168.229.128,port=6633 --switch ovs,protocols=OpenFlow13
